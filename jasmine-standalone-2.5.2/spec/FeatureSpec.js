@@ -28,4 +28,9 @@ describe('Thermostat', function(){
     expect(function() {thermostat.down(); }).toThrowError('Cannot go below 10 degrees');
   });
 
+  it ('set the maximum temperature 25 degrees when saving mode is on', function(){
+    expect(thermostat._powerSavingMode).toBe(true);
+    expect(thermostat._maximumTemperature).toEqual(25);
+  });
+
 });

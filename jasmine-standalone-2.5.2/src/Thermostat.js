@@ -2,7 +2,9 @@
 
 var Thermostat = function() {
   this.MINIMUM_TEMPERATURE = 10;
+  this._maximumTemperature = 25;
   this._currentTemperature = 20;
+  this._powerSavingMode = true;
 };
 
 Thermostat.prototype.temperature = function() {
