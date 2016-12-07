@@ -3,6 +3,7 @@
 describe ('Thermostat', function() {
   var thermostat;
 
+
   beforeEach(function(){
     thermostat = new Thermostat();
   });
@@ -17,6 +18,10 @@ describe ('Thermostat', function() {
 
   it ('responds to up function', function(){
     expect(thermostat.down).not.toBeUndefined();
+  });
+
+  it('should contain minimum temperature value', function(){
+    expect(thermostat.MINIMUM_TEMPERATURE).toEqual(10);
   });
 
 });

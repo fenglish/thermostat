@@ -1,6 +1,7 @@
 'use strict';
 
-function Thermostat() {
+var Thermostat = function() {
+  this.MINIMUM_TEMPERATURE = 10;
   this._currentTemperature = 20;
 };
 
@@ -13,5 +14,8 @@ Thermostat.prototype.up = function(){
 };
 
 Thermostat.prototype.down = function(){
-  return this._currentTemperature -= 1;
+  if (this._currentTemperature === this.MINIMUM_TEMPERATURE) {
+    throw new Error('Cannot go below 10 degrees');
+  }
+    return this._currentTemperature -= 1;
 };
