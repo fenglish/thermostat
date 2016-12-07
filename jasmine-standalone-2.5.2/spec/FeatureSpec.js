@@ -48,7 +48,24 @@ describe('Thermostat', function(){
       expect(thermostat._powerSavingMode).toBe(false);
       expect(thermostat._maximumTemperature).toEqual(32);
     });
+  });
 
+  it ('checks for medium level of usage', function(){
+    expect(thermostat.checkEnergyUsage()).toEqual('medium usage');
+  });
+
+  it ('checks for high level of usage', function(){
+    for (var i = 0; i<6; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.checkEnergyUsage()).toEqual('high usage');
+  });
+
+  it ('checks for low level of usage', function(){
+    for (var i = 0; i<6; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.checkEnergyUsage()).toEqual('low usage');
   });
 
 

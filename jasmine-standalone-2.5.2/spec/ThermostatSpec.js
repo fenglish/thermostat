@@ -40,4 +40,25 @@ describe ('Thermostat', function() {
   it ('should reset the temperature to 20', function(){
     expect(thermostat.reset).not.toBeUndefined();
   });
+
+  it('checks for medium level usage', function(){
+    expect(thermostat.checkEnergyUsage()).toEqual('medium usage');
+  });
+
+  it('checks for high level usage', function(){
+    for (var i = 0; i < 6; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.checkEnergyUsage()).toEqual('high usage');
+  });
+
+  it('checks for low level usage', function(){
+    for (var i = 0; i < 6; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.checkEnergyUsage()).toEqual('low usage');
+  });
+
+
+
 });
