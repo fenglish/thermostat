@@ -21,3 +21,8 @@ Thermostat.prototype.down = function(){
   }
     return this._currentTemperature -= 1;
 };
+
+Thermostat.prototype.turnOffPowerSaving = function () {
+  this._powerSavingMode = false;
+  this._maximumTemperature = 32;
+};
