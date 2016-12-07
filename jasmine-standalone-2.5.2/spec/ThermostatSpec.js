@@ -7,7 +7,16 @@ describe ('Thermostat', function() {
     thermostat = new Thermostat();
   });
 
-  it ('', function(){
+  it ('responds to temperature function', function(){
     expect(thermostat.temperature).not.toBeUndefined();
   });
+
+  it ('responds to up function', function(){
+    expect(thermostat.up).not.toBeUndefined();
+  });
+
+  it ('responds to up function', function(){
+    expect(thermostat.down).not.toBeUndefined();
+  });
+
 });
