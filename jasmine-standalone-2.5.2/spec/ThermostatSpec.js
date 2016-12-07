@@ -36,4 +36,8 @@ describe ('Thermostat', function() {
     thermostat.turnOffPowerSaving();
     expect(thermostat._powerSavingMode).toBe(false);
   });
+
+  it ('should reset the temperature to 20', function(){
+    expect(thermostat.reset).not.toBeUndefined();
+  });
 });

@@ -34,6 +34,12 @@ describe('Thermostat', function(){
     expect(thermostat._maximumTemperature).toEqual(25);
   });
 
+  it ('can reset the temperature to 20', function(){
+    thermostat.up();
+    thermostat.reset();
+    expect(thermostat._currentTemperature).toEqual(20);
+  });
+
   describe ('when power saving is off', function(){
     beforeEach(function(){
       thermostat.turnOffPowerSaving();
@@ -44,7 +50,6 @@ describe('Thermostat', function(){
     });
 
   });
-
 
 
 });
